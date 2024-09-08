@@ -1,9 +1,13 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Uno from "./pages/uno/uno";
 
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Routes>
+        <Route path="/" element={<Uno />} />
+      </Routes>
     </div>
   );
 }

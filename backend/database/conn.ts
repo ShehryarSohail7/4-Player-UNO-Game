@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 // Load environment variables from .env file
-dotenv.config({ path: '../.env' });
+dotenv.config({ path: "../.env" });
 
 // Connect to MongoDB
 let db_conn = () => {
