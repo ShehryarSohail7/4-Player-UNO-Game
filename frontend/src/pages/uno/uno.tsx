@@ -82,7 +82,7 @@ const Uno = () => {
                 <span className="mark">6</span>
               </span>
             </div>
-            <div className="card num-9 green">
+            <div className="card num-1 green">
               <span className="inner">
                 <span className="mark">9</span>
               </span>

@@ -19,6 +19,11 @@
   text-align: center;
   position: relative;
 }
+
+.card:hover {
+  top: -8%;
+}
+
 .card .inner {
   display: table-cell;
   vertical-align: middle;
@@ -63,11 +68,11 @@
 }
 
 .card.black {
-    color: red;
+  color: red;
 }
 
 .card.black .inner {
-    background: black;
+  background: black;
 }
 
 .card.blue .inner {
@@ -149,35 +154,34 @@
 }
 
 .card.reverse:before,
-.card.reverse:after{
-  content: "R"
+.card.reverse:after {
+  content: "R";
 }
 
 .card.skip:before,
-.card.skip:after{
-  content: "S"
+.card.skip:after {
+  content: "S";
 }
 
 .card.draw-two:before,
-.card.draw-two:after{
-  content: "+2"
+.card.draw-two:after {
+  content: "+2";
 }
 
 .card.draw-4:before,
-.card.draw-4:after{
-  content: "+4"
+.card.draw-4:after {
+  content: "+4";
 }
 
 .card.draw:before,
-.card.draw:after{
-  content: "D"
+.card.draw:after {
+  content: "D";
 }
 
 .card.discard-pile:before,
-.card.discard:after{
-    content: ''
+.card.discard:after {
+  content: "";
 }
-
 
 .card.num-6 .mark:after,
 .card.num-9 .mark:after {
