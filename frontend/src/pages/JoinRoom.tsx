@@ -1,10 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Socket } from "socket.io-client";
 
-const JoinRoom = () => {
+interface JoinRoomProps {
+  socket: Socket;
+  roomSizeHandler: (input: number) => void;
+}
+
+const JoinRoom: React.FC<JoinRoomProps> = ({ socket, roomSizeHandler }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/waiting");
+    socket.emit("joinRoom", "UNO_mafia");
+    socket.on("roomJoinStatus", (status: boolean, roomSize: number) => {
+      let navigationflag = status;
+      console.log("flag", navigationflag);
+      roomSizeHandler(roomSize);
+      navigationflag ? navigate("/waiting") : navigate("/full");
+    });
   };
 
   return (

@@ -64,6 +64,19 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User disconnected");
   });
+
+  // Handle room joining
+  socket.on("joinRoom", (roomName) => {
+    let roomSize = io.sockets.adapter.rooms.get(roomName)?.size || 0;
+    console.log(`Room ${roomName} has ${roomSize} players`);
+    if (roomSize < 4) {
+      socket.join(roomName);
+      console.log(`User ${socket.id} joined room ${roomName}`);
+      io.emit("roomJoinStatus", true, roomSize + 1);
+    } else {
+      socket.emit("roomJoinStatus", false, roomSize + 1);
+    }
+  });
 });
 
 // Start the server
